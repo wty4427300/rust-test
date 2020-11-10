@@ -4,8 +4,10 @@
 // include!("funtest1.rs");
 // include!("MyPointer.rs");
 // include!("vectest.rs");
-include!("strtest.rs");
+// include!("strtest.rs");
 
+
+mod errTest;
 
 fn main() {
     // for number in (1..10).rev() {
@@ -48,7 +50,7 @@ fn main() {
     // fun_test1();
     // let a=my_pointer();
     // println!("{}",*a);
-    test();
+    // test();
 }
 
 // fn another(x:i32,y:i32){
