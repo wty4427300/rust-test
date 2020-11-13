@@ -1,5 +1,6 @@
 use std::fs::File;
-use std::io::ErrorKind;
+use std::io::{ErrorKind, Read};
+use std::io::Error;
 
 enum Result<T,E>{
     Ok(T),
@@ -35,3 +36,52 @@ fn test1(){
         },
     };
 }
+
+//比包捕获error
+fn test2(){
+    let f =File::open("hello.txt").unwrap_or_else(|error|{
+        if error.kind()==ErrorKind::NotFound{
+            File::create("hello.txt").unwrap_or_else(|error|{
+                panic!("Problem creating the file: {:?}", error);
+            })
+        }else {
+            panic!("Problem opening the file: {:?}", error);
+        }
+    });
+}
+
+//unwrap对Result<T>做了match匹配
+fn test3(){
+    let f = File::open("hello.txt").unwrap();
+}
+
+//unwrap和expect的区别就好似可以自定义错误信息
+fn test4(){
+    let f = File::open("hello.txt").expect("Failed to open hello.txt");
+}
+
+//抛出异常
+fn read_username_from() -> std::result::Result<String, Error> {
+    let f =File::open("hello.txt");
+
+    let mut f=match f {
+        Ok(file)=>file,
+        Err(e)=>return Err(e),
+    };
+
+    let mut s=String::new();
+
+    match f.read_to_string(&mut s) {
+        Ok(_)=>Ok(s),
+        Err(e)=>Err(e),
+    }
+}
+
+fn test5(){
+    let mut f =File::open("hello.txt");
+    let mut s = String::new();
+}
+
+
+
+
