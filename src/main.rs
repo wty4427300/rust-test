@@ -8,6 +8,7 @@
 
 
 mod errTest;
+mod MyPointer;
 
 fn main() {
     // for number in (1..10).rev() {

@@ -1,6 +1,8 @@
-use std::fs::File;
 use std::io::{ErrorKind, Read};
 use std::io::Error;
+use std::io;
+use std::fs::File;
+use std::result;
 
 enum Result<T,E>{
     Ok(T),
@@ -74,6 +76,30 @@ fn read_username_from() -> std::result::Result<String, Error> {
     match f.read_to_string(&mut s) {
         Ok(_)=>Ok(s),
         Err(e)=>Err(e),
+    }
+}
+
+//panic的简写unwrap和expect
+//默认错误信息和自定义错误信息
+
+fn err_easy(){
+    let f=File::open("hello.txt").unwrap();
+    let file=File::open("hello.txt").expect("文件打开失败");
+}
+
+fn read_username_from_file() -> std::result::Result<String, Error> {
+    let f = File::open("hello.txt");
+
+    let mut f = match f {
+        Ok(file) => file,
+        Err(e) => return Err(e),
+    };
+
+    let mut s = String::new();
+
+    match f.read_to_string(&mut s) {
+        Ok(_) => Ok(s),
+        Err(e) => Err(e),
     }
 }
 
