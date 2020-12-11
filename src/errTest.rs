@@ -4,10 +4,10 @@ use std::io;
 use std::fs::File;
 use std::result;
 
-enum Result<T,E>{
-    Ok(T),
-    Err(E),
-}
+// enum Result<T,E>{
+//     Ok(T),
+//     Err(E),
+// }
 
 
 fn test(){
@@ -102,6 +102,18 @@ fn read_username_from_file() -> std::result::Result<String, Error> {
         Err(e) => Err(e),
     }
 }
+
+//传播错误的简写(?),也就是说?和match是差不多的
+fn err_easy_two()-> Result<String, io::Error>{
+    // let mut f=File::open("hello.txt");
+    let mut s =String::new();
+    // f.read_to_string(&mut s)?;
+    // 压缩一下代码
+    File::open("hello.txt")?.read_to_string(&mut s)?;
+    Ok(s)
+}
+
+
 
 fn test5(){
     let mut f =File::open("hello.txt");
