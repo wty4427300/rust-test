@@ -120,6 +120,10 @@ fn test5(){
     let mut s = String::new();
 }
 
+//最后废话几句
+//使用panic就本就默认粗错误不可恢复了,使用result的话就是吧错误丢给调用者去处理
+//也就是说写业务代码用panic,写工具或者库用result
+
 
 
 
