@@ -5,10 +5,11 @@
 // include!("MyPointer.rs");
 // include!("vectest.rs");
 // include!("strtest.rs");
+include!("traitTest.rs");
 
 
-mod errTest;
-mod MyPointer;
+// mod errTest;
+// mod MyPointer;
 
 fn main() {
     // for number in (1..10).rev() {
@@ -52,6 +53,7 @@ fn main() {
     // let a=my_pointer();
     // println!("{}",*a);
     // test();
+    trait_test()
 }
 
 // fn another(x:i32,y:i32){
