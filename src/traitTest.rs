@@ -22,6 +22,15 @@ impl <T> Point<T>{
     }
 }
 
+impl<T,U> Point1<T,U>{
+    fn mixUp<V,W>(self,other:Point1<V,W>)->Point1<T,W>{
+        Point1{
+            x:self.x,
+            y:other.y,
+        }
+    }
+}
+
 fn trait_test(){
     let test=vec![10,20,30,40,66];
     let result=largest_1(&test);
@@ -54,6 +63,38 @@ fn largest_1<T>(list:&T)->T{
     }
     largest
 }
+
+pub trait Summary{
+    fn summarize(&self) -> String;
+}
+
+pub struct NewsArticle {
+    pub headline: String,
+    pub location: String,
+    pub author: String,
+    pub content: String,
+}
+
+pub struct Tweet {
+    pub username: String,
+    pub content: String,
+    pub reply: bool,
+    pub retweet: bool,
+}
+
+impl Summary for Tweet {
+    fn summarize(&self) -> String {
+        format!("{}: {}", self.username, self.content)
+    }
+}
+
+impl Summary for NewsArticle{
+    fn summarize(&self)->String{
+        format!("{}, by {} ({})", self.headline, self.author, self.location)
+    }
+}
+
+
 
 
 
