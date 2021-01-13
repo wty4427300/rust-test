@@ -1,4 +1,4 @@
-use std::fmt::Debug;
+use std::fmt::{Debug, Display};
 // include!("test.rs");
 // include!("funtest.rs");
 // include!("rust-test.rs");
