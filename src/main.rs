@@ -1,4 +1,4 @@
-use std::fmt::{Debug, Display};
+//use std::fmt::{Debug, Display};
 // include!("test.rs");
 // include!("funtest.rs");
 // include!("rust-test.rs");
@@ -6,7 +6,7 @@ use std::fmt::{Debug, Display};
 // include!("MyPointer.rs");
 // include!("vectest.rs");
 // include!("strtest.rs");
-include!("traitTest.rs");
+//include!("traitTest.rs");
 
 
 // mod errTest;
@@ -54,7 +54,7 @@ fn main() {
     // let a=my_pointer();
     // println!("{}",*a);
     // test();
-    trait_test()
+    //trait_test()
 }
 
 // fn another(x:i32,y:i32){
