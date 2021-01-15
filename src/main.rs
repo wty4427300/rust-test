@@ -7,12 +7,25 @@
 // include!("vectest.rs");
 // include!("strtest.rs");
 //include!("traitTest.rs");
+include!("iotest.rs");
 
 
 // mod errTest;
 // mod MyPointer;
 
+use std::{env, fs, process};
+use term::terminfo::parser::compiled::parse;
+
 fn main() {
+    //获取命令行参数并打印
+    let args: Vec<String> = env::args().collect();
+    println!("{:?}", args);
+    let config =Config::new(&args).unwrap_or_else(|err|{
+        println!("输出错误信息: {}", err);
+        //非0的错误码,代表非正常退出
+        process::exit(1);
+    });
+    // io_test(args);
     // for number in (1..10).rev() {
     //     println!("{}!", number);
     // }

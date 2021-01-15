@@ -274,6 +274,37 @@ string是贯穿整个程序运行过程的生命周期。
 被测函数需要加#[test]注解
 大部分测试是使用assert系列宏进行测试。
 
+测试代码也是编译成二进制执行,默认全部测试,而且是多线程执行，所以要注意代码之间有没有依赖
+
+也可以设定测试的线程数
+
+```cargo test -- --test-threads=1```
+
+测试结果打印函数输出
+
+```cargo test -- --nocapture```
+
+测试单个函数
+
+```cargo test 函数名```
+
+会匹配有所函数名里面带有add的函数并测试
+
+```cargo test add```
+
+```#[ignore]标识忽略那些函数```
+```cargo test -- --ignore```
+
+集成测试
+
+需要与src同级的tests文件夹
+
+可运行集成测试的单个测试
+cargo test --test integration_test
+
+## 21.一个I/O项目：构建一个命令行程序
+
+
 
 
 
