@@ -15,16 +15,15 @@ impl Config{
         Ok(Config { query, filename })
     }
 }
-fn io_test(args:&Config){
-    let query = &args.query;
-    let filename = &args.filename;
-    println!("打开文件 {}", filename);
 
+//dyn动态的意思 dynamic,?会抛出异常让调用者使用
+fn io_test(config:Config)->Result<(),Box<dyn Error>>{
     //打开文件按照字符流打印
-    let contents = fs::read_to_string(filename)
-        .expect("打开文件失败");
+    let contents = fs::read_to_string(config.filename)?;
 
     println!("文件内容:\n{}", contents);
+
+    Ok(())
 }
 
 //这个拆分出的逻辑是那个参数该放进那个变量

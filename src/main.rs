@@ -14,7 +14,7 @@ include!("iotest.rs");
 // mod MyPointer;
 
 use std::{env, fs, process};
-use term::terminfo::parser::compiled::parse;
+use std::error::Error;
 
 fn main() {
     //获取命令行参数并打印
@@ -25,7 +25,10 @@ fn main() {
         //非0的错误码,代表非正常退出
         process::exit(1);
     });
-    // io_test(args);
+    if let Err(e)=io_test(config){
+        println!("Application error: {}", e);
+        process::exit(1);
+    };
     // for number in (1..10).rev() {
     //     println!("{}!", number);
     // }
