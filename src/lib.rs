@@ -12,6 +12,7 @@ pub fn greeting(name:&str)->String{
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     use crate::{add_two, greeting};
 
     #[derive(Debug)]
@@ -60,5 +61,22 @@ mod tests {
             Err(String::from("错了"))
         }
     }
+
+    #[test]
+    fn case_sensitive(){
+        let query ="duct";
+        let contents = "\
+Rust:
+safe, fast, productive.
+Pick three.
+Duct tape.";
+
+    }
+
+    assert_eq!(
+        vec!["safe, fast, productive."],
+        //search已经改没了，写这个就是练一下代码风格
+        search(query, contents)
+    );
 }
 //简单的判断了一下2+2=4
