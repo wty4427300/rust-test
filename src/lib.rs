@@ -1,3 +1,7 @@
+//尝试测试另外一个模块
+mod iotesttdd;
+
+
 pub fn add_two(a:i32) ->i32{
   a+2
 }

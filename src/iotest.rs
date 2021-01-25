@@ -1,6 +1,6 @@
 //开始看一下rust的io部分
 
-struct Config {
+pub struct Config {
     query: String,
     filename: String,
 }
@@ -17,7 +17,7 @@ impl Config{
 }
 
 //dyn动态的意思 dynamic,?会抛出异常让调用者使用
-fn io_test(config:Config)->Result<(),Box<dyn Error>>{
+pub fn io_test(config:Config)->Result<(),Box<dyn Error>>{
     //打开文件按照字符流打印
     let contents = fs::read_to_string(config.filename)?;
 

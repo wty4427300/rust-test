@@ -8,13 +8,11 @@
 // include!("strtest.rs");
 //include!("traitTest.rs");
 include!("iotest.rs");
-
-
 // mod errTest;
 // mod MyPointer;
-
 use std::{env, fs, process};
 use std::error::Error;
+
 
 fn main() {
     //获取命令行参数并打印
