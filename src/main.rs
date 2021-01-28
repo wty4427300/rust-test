@@ -19,7 +19,8 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
     let config =Config::new(&args).unwrap_or_else(|err|{
-        println!("输出错误信息: {}", err);
+        //标准错误
+        eprintln!("输出错误信息: {}", err);
         //非0的错误码,代表非正常退出
         process::exit(1);
     });

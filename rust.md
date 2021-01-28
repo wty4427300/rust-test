@@ -304,6 +304,9 @@ cargo test --test integration_test
 
 ## 21.一个I/O项目：构建一个命令行程序
 
+## 22.开始摸闭包
+
+
 
 
 
