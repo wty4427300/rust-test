@@ -8,13 +8,15 @@
 // include!("strtest.rs");
 //include!("traitTest.rs");
 //include!("iotest.rs");
-include!("closurestest.rs");
+//include!("closurestest.rs");
+include!("itertest.rs");
 // mod errTest;
 // mod MyPointer;
 use std::{env, fs, process};
 use std::error::Error;
 use std::time::Duration;
 use std::panic::resume_unwind;
+use core::slice::index::slice_end_index_len_fail;
 
 
 fn main() {
