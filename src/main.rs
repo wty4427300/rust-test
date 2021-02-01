@@ -7,11 +7,14 @@
 // include!("vectest.rs");
 // include!("strtest.rs");
 //include!("traitTest.rs");
-include!("iotest.rs");
+//include!("iotest.rs");
+include!("closurestest.rs");
 // mod errTest;
 // mod MyPointer;
 use std::{env, fs, process};
 use std::error::Error;
+use std::time::Duration;
+use std::panic::resume_unwind;
 
 
 fn main() {
@@ -28,6 +31,8 @@ fn main() {
         println!("Application error: {}", e);
         process::exit(1);
     };
+
+    let x:Option<i32>=None;
     // for number in (1..10).rev() {
     //     println!("{}!", number);
     // }

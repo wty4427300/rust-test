@@ -78,5 +78,7 @@ Duct tape.";
         //search已经改没了，写这个就是练一下代码风格
         search(query, contents)
     );
+
+
 }
 //简单的判断了一下2+2=4
