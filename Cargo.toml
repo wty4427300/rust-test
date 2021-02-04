@@ -1,5 +1,6 @@
 [package]
 name = "rust-test"
+license = "MIT"
 version = "0.1.0"
 authors = ["wty4427300 <wty4427300@gmail.com>"]
 edition = "2018"
@@ -7,3 +8,10 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[profile.dev]
+# 这个参数代表对代码的优化程度,越高的优化编译时间越长
+opt-level = 0
+
+[profile.release]
+opt-level = 3

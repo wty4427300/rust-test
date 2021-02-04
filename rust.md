@@ -307,139 +307,29 @@ cargo test --test integration_test
 ## 22.开始摸闭包
 
 ## 23.迭代器
+迭代器高效是因为被编译成了与手写相同的汇编,还是使用了循环展开等优化。
 
+## 24.cargo 和crates.io
+build的时候添加 dev release参数可使用不同的参数
 
+/// 代表文档注释
 
+//！文档注释的注释
 
+pub use 将结构重导出 提高crate的体验
 
+cargo publish提交crate
 
+cargo yank --vers 撤回版本
 
+workspace和go语言的差不多都是用来组织自己的代码和三方库的依赖关系。
 
+cargo test 不但会运行主crate的测试也会运行其他crate的测试
+使用 -p -crate名可指定运行相关crate的测试。
 
+cargo install用来安装二进制的crate
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## 25.智能指针
 
 
 
