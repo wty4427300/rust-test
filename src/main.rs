@@ -1,3 +1,4 @@
+use crate::List::{Cons, Nil};
 //use std::fmt::{Debug, Display};
 // include!("test.rs");
 // include!("funtest.rs");
@@ -9,32 +10,34 @@
 //include!("traitTest.rs");
 //include!("iotest.rs");
 //include!("closurestest.rs");
-include!("itertest.rs");
+// include!("itertest.rs");
+include!("autoptr.rs");
 // mod errTest;
 // mod MyPointer;
-use std::{env, fs, process};
-use std::error::Error;
-use std::time::Duration;
-use std::panic::resume_unwind;
-use core::slice::index::slice_end_index_len_fail;
+// use std::{env, fs, process};
+// use std::error::Error;
+// use std::time::Duration;
+// use std::panic::resume_unwind;
+
 
 
 fn main() {
-    //获取命令行参数并打印
-    let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
-    let config =Config::new(&args).unwrap_or_else(|err|{
-        //标准错误
-        eprintln!("输出错误信息: {}", err);
-        //非0的错误码,代表非正常退出
-        process::exit(1);
-    });
-    if let Err(e)=io_test(config){
-        println!("Application error: {}", e);
-        process::exit(1);
-    };
-
-    let x:Option<i32>=None;
+    test();
+    // //获取命令行参数并打印
+    // let args: Vec<String> = env::args().collect();
+    // println!("{:?}", args);
+    // let config =Config::new(&args).unwrap_or_else(|err|{
+    //     //标准错误
+    //     eprintln!("输出错误信息: {}", err);
+    //     //非0的错误码,代表非正常退出
+    //     process::exit(1);
+    // });
+    // if let Err(e)=io_test(config){
+    //     println!("Application error: {}", e);
+    //     process::exit(1);
+    // };
+    //
+    // let x:Option<i32>=None;
     // for number in (1..10).rev() {
     //     println!("{}!", number);
     // }
