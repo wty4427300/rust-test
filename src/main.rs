@@ -24,7 +24,7 @@ include!("autoptr.rs");
 
 
 fn main() {
-    test_3();
+    test_6();
     // //获取命令行参数并打印
     // let args: Vec<String> = env::args().collect();
     // println!("{:?}", args);

@@ -54,6 +54,31 @@ fn hello(name:&str){
     println!("hello,{}!",name);
 }
 
+struct CustomSmartPointer{
+    data:String,
+}
+
+impl Drop for CustomSmartPointer{
+    fn drop(&mut self){
+        println!("Dropping CustomSmartPointer with data `{}`!", self.data);
+    }
+}
+
+fn test_5(){
+    let c=CustomSmartPointer{data:String::from("hanhan")};
+    let d=CustomSmartPointer{data:String::from("hanpi")};
+    println!("CustomSmartPointers created.");
+}
+
+//主动调用drop（std::mem::drop）
+fn test_6(){
+    let c=CustomSmartPointer{data:String::from("some data")};
+    println!("CustomSmartPointer created.");
+    drop(c);
+    println!("CustomSmartPointer dropped before the end of main.");
+}
+
+
 
 
 
