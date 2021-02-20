@@ -79,6 +79,30 @@ fn test_6(){
 }
 
 
+enum MyList{
+   Conss(i32,Rc<MyList>),
+   Null,
+}
+//Rc共享所有权
+fn test_7(){
+    let a=Rc::new(Conss(5,Rc::new(Conss(10,Rc::new(Null)))));
+    let b=Conss(3,Rc::clone(&a));
+    let c=Conss(4,Rc::clone(&a));
+}
+//Rc::clone不会真的clone只会增加引用计数器,使用与不可变引用
+fn test_8() {
+    let a = Rc::new(Conss(5, Rc::new(Conss(10, Rc::new(Null)))));
+    println!("count after creating a = {}", Rc::strong_count(&a));
+    let b = Conss(3, Rc::clone(&a));
+    println!("count after creating b = {}", Rc::strong_count(&a));
+    //进入该作用域计数器加1,出作用域减1
+    {
+        let c = Conss(4, Rc::clone(&a));
+        println!("count after creating c = {}", Rc::strong_count(&a));
+    }
+    println!("count after c goes out of scope = {}", Rc::strong_count(&a));
+}
+
 
 
 

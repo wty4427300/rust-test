@@ -1,6 +1,9 @@
 use crate::List::{Cons, Nil};
 use std::ops::Deref;
 use std::alloc::handle_alloc_error;
+use std::rc::Rc;
+use std::slice::RChunks;
+use crate::MyList::{Conss, Null};
 //use std::fmt::{Debug, Display};
 // include!("test.rs");
 // include!("funtest.rs");
@@ -24,7 +27,7 @@ include!("autoptr.rs");
 
 
 fn main() {
-    test_6();
+    test_8();
     // //获取命令行参数并打印
     // let args: Vec<String> = env::args().collect();
     // println!("{:?}", args);
