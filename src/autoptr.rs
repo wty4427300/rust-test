@@ -103,6 +103,73 @@ fn test_8() {
     println!("count after c goes out of scope = {}", Rc::strong_count(&a));
 }
 
+pub trait Messenger{
+    fn send(&self,msg:&str);
+}
+
+pub struct LimitTracker<'a,T:Messenger>{
+    messenger:&'a T,
+    value:usize,
+    max:usize,
+}
+
+impl <'a,T>LimitTracker<'a,T> where T:Messenger{
+    pub fn new(messenger:&T,max:usize)->LimitTracker<T>{
+        LimitTracker{
+            messenger,
+            value:0,
+            max,
+        }
+    }
+
+    pub fn set_value(&mut self,value:usize){
+        let percentage_of_max =self.value as f64 /self.max as f64;
+        if percentage_of_max >= 1.0 {
+            self.messenger.send("Error: You are over your quota!");
+        } else if percentage_of_max >= 0.9 {
+            self.messenger.send("Urgent warning: You've used up over 90% of your quota!");
+        } else if percentage_of_max >= 0.75 {
+            self.messenger.send("Warning: You've used up over 75% of your quota!");
+        }
+    }
+}
+
+struct MockMessenger{
+    sent_messages:RefCell<Vec<Sting>>,
+}
+
+impl MockMessenger{
+    fn nwe()->MockMessenger{
+        MockMessenger{
+            sent_messages:RefCell::new(vec![])
+        }
+    }
+}
+//虽然传入的是不可变的self,但是sent_messages是Refcell保存的，可以获取方法内部的可变性，可以进行修改
+impl Messenger for MockMessenger{
+    fn send(&self, msg: &str) {
+        self.sent_messages.borrow_mut().push(String::from(msg));
+    }
+}
+
+enum NewList{
+    NewCons(Rc<RefCell<i32>>,Rc<NewList>),
+    NewNil,
+}
+
+fn test_10(){
+    let value=Rc::new(RefCell::new(5));
+
+    let a=Rc::new(NewCons(Rc::clone(&value),Rc::new(NewNil)));
+
+    let b=NewCons(Rc::new(RefCell::new(6)),Rc::clone(&a));
+
+    let c=NewCons(Rc::new(RefCell::new(10)),Rc::clone(&a));
+
+    *value.borrow_mut() += 10;
+}
+
+
 
 
 
