@@ -2,6 +2,7 @@ use std::cell::RefCell;
 use std::rc::{Rc, Weak};
 use crate::List::{Cons, Nil};
 use std::option::Option::Some;
+use std::time::Duration;
 // use crate::List::{Cons, Nil};
 // use std::ops::Deref;
 // use std::alloc::handle_alloc_error;
@@ -30,11 +31,12 @@ use std::option::Option::Some;
 // use std::error::Error;
 // use std::time::Duration;
 // use std::panic::resume_unwind;
-include!("ptrtest.rs");
+// include!("ptrtest.rs");
+include!("threadtest.rs");
 
 
 fn main() {
-    test_1();
+    // test_1();
     //test_8();
     // //获取命令行参数并打印
     // let args: Vec<String> = env::args().collect();
