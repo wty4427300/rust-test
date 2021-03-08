@@ -18,7 +18,7 @@ fn test_1(){
 //闭包捕获住线程的变量的
 fn test_2(){
     let v=vec![1,2,3];
-    //所有权属于子线程,住线程不能再drop(v)
+    //所有权属于子线程,线程不能再drop(v)
     let handle =thread::spawn(move ||{
         println!("Here's a vector: {:?}",v)
     });
