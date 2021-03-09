@@ -83,3 +83,14 @@ fn test_4(){
         println!("got:{}",recv)
     }
 }
+
+fn test_5(){
+    let m=Mutex::new(5);
+    {
+        let mut num=m.lock().unwrap();
+        *num=6;
+        //出作用域调用drop()自动释放锁
+    }
+
+    println!("m={:?}",m);
+}

@@ -360,4 +360,8 @@ Rc::downgrade 会将weak_count 加1
 
 ## 26.并发
 
-注意所有权规则等等
+1.注意所有权规则等等
+2.channel
+3.共享状态并发mutex
+
+

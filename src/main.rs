@@ -3,6 +3,7 @@
 // use crate::List::{Cons, Nil};
 // use std::option::Option::Some;
 use std::time::Duration;
+use std::sync::Mutex;
 // use crate::List::{Cons, Nil};
 // use std::ops::Deref;
 // use std::alloc::handle_alloc_error;
@@ -36,7 +37,7 @@ include!("threadtest.rs");
 
 
 fn main() {
-    test_4();
+    test_5();
     // test_1();
     //test_8();
     // //获取命令行参数并打印
