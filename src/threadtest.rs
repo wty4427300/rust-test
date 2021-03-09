@@ -45,9 +45,11 @@ fn test_3() {
     let received =rx.recv().unwrap();
     println!("got:{}",received);
 }
-
+//多发送者一个消费者，使用clone来复制sender
 fn test_4(){
     let (tx,rx)=mpsc::channel();
+
+    let tx1=tx.clone();
 
     thread::spawn(move||{
         let vals=vec![
@@ -63,9 +65,21 @@ fn test_4(){
         }
     });
 
+    thread::spawn(move||{
+        let vals=vec![
+            String::from("1"),
+            String::from("2"),
+            String::from("3"),
+            String::from("4"),
+        ];
+
+        for val in vals {
+            tx1.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+    });
+
     for recv in rx {
         println!("got:{}",recv)
     }
 }
-
-
