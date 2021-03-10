@@ -364,4 +364,8 @@ Rc::downgrade 会将weak_count 加1
 2.channel
 3.共享状态并发mutex
 
+rust认为锁难用是因为，我们总是需要小心把握锁获取和释放的时机。而rust依靠所有权和trait。来帮助我们
+当锁离开当前作用于调用drop自动释放锁。
+
+
 
