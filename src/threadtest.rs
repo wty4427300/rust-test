@@ -113,3 +113,11 @@ fn test_6(){
 
     println!("Result:{}",*counter.lock().unwrap());
 }
+//没实现send的引用计数器是不允许在多线程之间传递的
+fn test_7(){
+
+}
+
+
+
+

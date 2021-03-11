@@ -5,7 +5,7 @@
 4.rustc main.rs编译
 5.预编译静态类型语言
 6.cargo --version查看cargo版本或者cargo -V
-7.使用cargo创建项目new cargo hellow
+7.使用cargo创建项目cargo new hellow
 8.cargo生成了两个文件和一个目录（cargo.toml和main.rs文件夹是src）
 9.cargo.toml有四行属性分别是项目名，版本，作者以及edition值
 10.构建和运行cargo项目
@@ -366,6 +366,14 @@ Rc::downgrade 会将weak_count 加1
 
 rust认为锁难用是因为，我们总是需要小心把握锁获取和释放的时机。而rust依靠所有权和trait。来帮助我们
 当锁离开当前作用于调用drop自动释放锁。
+
+4.
+send允许在线程间转移所有权
+sync允许多线程访问
+
+rust的并发对我来说是简单粗暴，没有其他语言那么多的并发工具和概念。这样也好也许可以造轮子
+
+## 27.面向对象
 
 
 
