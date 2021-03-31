@@ -39,7 +39,7 @@ impl Draw for SelectBox{
 
     }
 }
-//感觉来了
+//感觉来了，不同类型统一的执行流程
 fn test1(){
     let screen =Screen{
         components: vec![
@@ -62,4 +62,6 @@ fn test1(){
 
     screen.run();
 }
+
+
 
