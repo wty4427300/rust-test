@@ -34,7 +34,8 @@ use std::rc::Rc;
 // use std::time::Duration;
 // use std::panic::resume_unwind;
 // include!("ptrtest.rs");
-include!("threadtest.rs");
+// include!("threadtest.rs");
+include!("gui/gui.rs");
 
 
 fn main() {
