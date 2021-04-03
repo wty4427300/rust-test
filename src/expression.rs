@@ -30,5 +30,68 @@ fn test2(){
     for(index,value) in v.iter().enumerate(){
         println!("{} is at index {}", value, index);
     }
-
 }
+
+fn test3(){
+    let x = 1;
+    match x {
+        1 => println!("one"),
+        2 => println!("two"),
+        3 => println!("three"),
+        _ => println!("anything"),
+    }
+}
+
+enum Message{
+    Quit,
+    Move{x:i32,y:i32},
+    Write(String),
+    ChangeColor(i32,i32,i32),
+}
+
+fn test4(){
+    let msg=Message::ChangeColor(0,160,255);
+    match msg {
+        Message::Quit => {
+            println!("The Quit variant has no data to destructure.")
+        }
+        Message::Move { x, y } => {
+            println!(
+                "Move in the x direction {} and in the y direction {}",
+                x,
+                y
+            );
+        }
+        Message::Write(text) => println!("Text message: {}", text),
+        Message::ChangeColor(r, g, b) => {
+            println!(
+                "Change the color to red {}, green {}, and blue {}",
+                r,
+                g,
+                b
+            )
+        }
+    }
+}
+
+enum Message1 {
+    Hello { id: i32 },
+}
+
+fn test5() {
+    let msg = Message::Hello { id: 5 };
+
+    match msg {
+        Message::Hello { id: id_variable @ 3..=7 } => {
+            println!("Found an id in range: {}", id_variable)
+        },
+        Message::Hello { id: 10..=12 } => {
+            println!("Found an id in another range")
+        },
+        Message::Hello { id } => {
+            println!("Found some other id: {}", id)
+        },
+    }
+}
+
+
