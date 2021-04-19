@@ -1,3 +1,4 @@
+use std::fmt::Formatter;
 // use std::cell::RefCell;
 // use std::rc::{Rc, Weak};
 // use crate::List::{Cons, Nil};
@@ -47,7 +48,7 @@ include!("unsafetest.rs");
 
 
 fn main() {
-    test()
+    test6()
     // test_1();
     //test_8();
     // //获取命令行参数并打印

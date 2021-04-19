@@ -19,13 +19,13 @@ fn test(){
 
 unsafe fn test2(){}
 
-fn test3(){
-    let mut v=vec![1,2,3,4,5,6];
-    let r =&mut v[..];
-    let(a,b)=slip_at_mut(r, 3);
-    assert_eq!(a, &mut [1, 2, 3]);
-    assert_eq!(b, &mut [4, 5, 6]);
-}
+// fn test3(){
+//     let mut v=vec![1,2,3,4,5,6];
+//     let r =&mut v[..];
+//     let(a,b)=slip_at_mut(r, 3);
+//     assert_eq!(a, &mut [1, 2, 3]);
+//     assert_eq!(b, &mut [4, 5, 6]);
+// }
 
 //同一个切片借用了两次不安全，所以想要使用需要加unsafe代码块
 fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
@@ -42,14 +42,14 @@ fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
     }
 }
 
-static hellow:&str="hanhan";
-//读写静态变量是不安全的，需要unsafe,
-fn test4(){
-    println!("{}",hellow);
-    unsafe {
-        hellow+"sssss";
-    }
-}
+// static hellow:&str="hanhan";
+// //读写静态变量是不安全的，需要unsafe,
+// fn test4(){
+//     println!("{}",hellow);
+//     unsafe {
+//         hellow+"sssss";
+//     }
+// }
 
 //不安全的trait
 unsafe trait Foo{
@@ -94,6 +94,47 @@ impl Add<Meters> for Millimeters {
 }
 
 
+use std::fmt;
+
+trait OutlinePrint: fmt::Display {
+    fn outline_print(&self) {
+        let output = self.to_string();
+        let len = output.len();
+        println!("{}", "*".repeat(len + 4));
+        println!("*{}*", " ".repeat(len + 2));
+        println!("* {} *", output);
+        println!("*{}*", " ".repeat(len + 2));
+        println!("{}", "*".repeat(len + 4));
+    }
+}
+
+struct PointOut {
+    x: i32,
+    y: i32,
+}
+
+impl fmt::Display for PointOut {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({}, {})", self.x, self.y)
+    }
+}
+
+impl OutlinePrint for PointOut {
+
+}
+
+struct  Wrapper(Vec<String>);
+//format ，被格式化的样子 ，以及什么符号做间隔
+impl fmt::Display for Wrapper{
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        write!(f,"[{}]",self.0.join(","))
+    }
+}
+
+fn test6() {
+    let w = Wrapper(vec![String::from("hello"), String::from("world")]);
+    println!("w = {}", w);
+}
 
 
 
