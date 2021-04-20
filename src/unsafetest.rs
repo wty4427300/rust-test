@@ -136,7 +136,17 @@ fn test6() {
     println!("w = {}", w);
 }
 
-
+type Kilometers =i32;
+fn test7(){
+    let x:i32=8;
+    let y:Kilometers=15;
+    let z=x+y;
+    println!("{}",z);
+}
+//!没返回值
+fn test8()-> ! {
+    let x=1;
+}
 
 
 

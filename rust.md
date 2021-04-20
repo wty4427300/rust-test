@@ -402,4 +402,7 @@ if let,while let可以和可反驳使用
 没有self参数就是关联函数，当使用关联函数时如果没有self，rust就无法计算出具体使用那个，此时需要使用完全限定语法
 来告诉rust<xx as trait>::yy();
 
+使用type字段可以给类型起别名
+type xx= i32
+
 
