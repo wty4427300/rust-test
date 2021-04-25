@@ -147,6 +147,15 @@ fn test7(){
 fn test8()-> ! {
     let x=1;
 }
+fn add_one(x:i32)->i32{
+    x+1
+}
 
+fn do_write(f:fn(i32)->i32,arg:i32)->i32{
+    f(arg)+f(arg)
+}
 
+fn test9(){
+    let answer=do_write(add_one,5);
+}
 

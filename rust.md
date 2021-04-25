@@ -405,4 +405,4 @@ if let,while let可以和可反驳使用
 使用type字段可以给类型起别名
 type xx= i32
 
-
+&str本质上存储了两个值str的长度和地址
