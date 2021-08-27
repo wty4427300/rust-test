@@ -155,7 +155,23 @@ fn do_write(f:fn(i32)->i32,arg:i32)->i32{
     f(arg)+f(arg)
 }
 
+//朋友被我拉入坑了，送他一个hello word
 fn test9(){
-    let answer=do_write(add_one,5);
+    let s="我是你爹";
+    println!("{}",s);
+}
+
+fn test10(){
+    let list_of_numbers=vec![1,2,3];
+    let list_of_string:Vec<Sting> =list_of_numbers.iter().map(|i|i.to_string()).collect();
+}
+
+enum  Status{
+    Value(u32),
+    Stop,
+}
+
+fn test11(){
+    let list_of_numbers:Vec<Status>=(0u32..20).map(Status::Value).collect();
 }
 
