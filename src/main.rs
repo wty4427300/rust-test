@@ -44,24 +44,26 @@
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
+include!("test4.rs");
 
-//参数是一个变量和一个函数
-fn apply(value:i32,f:fn(i32)->i32)->i32{
-    f(value)
-}
-
-//参数是一个变量
-fn square(value: i32)->i32{
-    value * value
-}
-
-fn cube(value: i32)->i32{
-    value * value * value
-}
+// //参数是一个变量和一个函数
+// fn apply(value:i32,f:fn(i32)->i32)->i32{
+//     f(value)
+// }
+//
+// //参数是一个变量
+// fn square(value: i32)->i32{
+//     value * value
+// }
+//
+// fn cube(value: i32)->i32{
+//     value * value * value
+// }
 
 fn main() {
-    println!("apply square: {}", apply(2, square));
-    println!("apply cube: {}", apply(2, cube));
+    test();
+    // println!("apply square: {}", apply(2, square));
+    // println!("apply cube: {}", apply(2, cube));
     // test6()
     // test_1();
     //test_8();
