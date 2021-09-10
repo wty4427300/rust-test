@@ -44,7 +44,7 @@
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test4.rs");
+include!("dag.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
@@ -61,7 +61,7 @@ include!("test4.rs");
 // }
 
 fn main() {
-    test();
+    test1();
     // println!("apply square: {}", apply(2, square));
     // println!("apply cube: {}", apply(2, cube));
     // test6()
