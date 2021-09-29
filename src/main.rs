@@ -44,7 +44,7 @@
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test6.rs");
+include!("test7.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
@@ -60,7 +60,7 @@ include!("test6.rs");
 //     value * value * value
 // }
 fn main() {
-    test()
+    // test()
     // show_size!(header);
     // show_size!(u8);
     // show_size!(f64);
