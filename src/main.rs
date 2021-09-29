@@ -44,7 +44,7 @@
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("dag.rs");
+include!("test6.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
@@ -59,9 +59,18 @@ include!("dag.rs");
 // fn cube(value: i32)->i32{
 //     value * value * value
 // }
-
 fn main() {
-    test1();
+    test()
+    // show_size!(header);
+    // show_size!(u8);
+    // show_size!(f64);
+    // show_size!(&u8);
+    // show_size!(Box<u8>);
+    // show_size!(&[u8]);
+    // show_size!(String);
+    // show_size!(Vec<u8>);
+    // show_size!(HashMap<String, String>);
+    // show_size!(E);
     // println!("apply square: {}", apply(2, square));
     // println!("apply cube: {}", apply(2, cube));
     // test6()
