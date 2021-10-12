@@ -1,3 +1,4 @@
+use std::fmt::Formatter;
 // use std::cell::RefCell;
 // use std::rc::{Rc, Weak};
 // use crate::List::{Cons, Nil};
@@ -44,7 +45,7 @@
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test7.rs");
+include!("test8.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
@@ -60,7 +61,7 @@ include!("test7.rs");
 //     value * value * value
 // }
 fn main() {
-    // test()
+    test()
     // show_size!(header);
     // show_size!(u8);
     // show_size!(f64);
