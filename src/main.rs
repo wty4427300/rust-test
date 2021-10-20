@@ -1,6 +1,5 @@
-mod test9;
-
-use std::fmt::Formatter;
+// mod test9;
+// use std::fmt::Formatter;
 // use std::cell::RefCell;
 // use std::rc::{Rc, Weak};
 // use crate::List::{Cons, Nil};
@@ -47,7 +46,7 @@ use std::fmt::Formatter;
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test8.rs");
+include!("test10.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
