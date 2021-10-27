@@ -1,3 +1,4 @@
+use std::alloc::GlobalAlloc;
 // mod test9;
 // use std::fmt::Formatter;
 // use std::cell::RefCell;
@@ -46,7 +47,7 @@
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test10.rs");
+include!("test11.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
