@@ -1,4 +1,4 @@
-use std::borrow::Borrow;
+// use std::borrow::Borrow;
 // use std::alloc::GlobalAlloc;
 // mod test9;
 // use std::fmt::Formatter;
@@ -31,9 +31,9 @@ use std::borrow::Borrow;
 // include!("MyPointer.rs");
 // include!("vectest.rs");
 // include!("strtest.rs");
-//include!("traitTest.rs");
-//include!("iotest.rs");
-//include!("closurestest.rs");
+// include!("traitTest.rs");
+// include!("iotest.rs");
+// include!("closurestest.rs");
 // include!("itertest.rs");
 // include!("autoptr.rs");
 // mod errTest;
@@ -48,7 +48,7 @@ use std::borrow::Borrow;
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test12.rs");
+include!("test13.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
