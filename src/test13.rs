@@ -38,6 +38,16 @@ impl fmt::Debug for MiniString {
     }
 }
 
+//match 也可以用来处理 if 语句的写法
+impl From<String> for MyString {
+    fn from(s: String) -> Self {
+        match s.len()>MINI_STRING_MAX_LEN {
+            true=>Self::Standard(s),
+            _=>Self::Inline(MiniString::new(s)),
+        }
+    }
+}
+
 #[derive(Debug)]
 enum MyString {
     Inline(MiniString),
