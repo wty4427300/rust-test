@@ -1,4 +1,4 @@
-use std::fmt::Formatter;
+// use std::fmt::Formatter;
 // use std::borrow::Borrow;
 // use std::alloc::GlobalAlloc;
 // mod test9;
@@ -49,7 +49,7 @@ use std::fmt::Formatter;
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test13.rs");
+include!("test14.rs");
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
