@@ -54,6 +54,24 @@ enum MyString {
     Standard(String),
 }
 
+impl MyString {
+    fn push_str(&mut self,string: &str){
+        match self {
+            MyString::Inline(m) => {
+                let l=m.len();
+                let len=l+string.len();
+                if len>MINI_STRING_MAX_LEN{
+                    *self=Self::Standard(m.to_string()+string)
+                }else {
+                    m.data[l..].copy_from_slice(string.as_bytes());
+                    m.len=len as u8;
+                }
+            },
+            MyString::Standard(s) => s.push_str(string),
+        }
+    }
+}
+
 //实现两个枚举值统一的deref返回值
 impl Deref for MyString{
     type Target = str;
