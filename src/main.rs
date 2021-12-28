@@ -49,7 +49,9 @@
 // include!("post.rs");
 // include!("expression.rs");
 // include!("unsafetest.rs");
-include!("test14.rs");
+include!("test15.rs");
+use std::error::Error;
+use std::process::Command;
 
 // //参数是一个变量和一个函数
 // fn apply(value:i32,f:fn(i32)->i32)->i32{
